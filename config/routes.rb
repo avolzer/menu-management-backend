@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   resources :menus, controller: :menus, only: [:index, :show]
   resources :menu_items, controller: :menu_items, only: [:index, :show]
+  resources :restaurants, controller: :restaurants, only: [:index, :show]
 end
