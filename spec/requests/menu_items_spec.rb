@@ -9,7 +9,6 @@ RSpec.describe "MenuItems", type: :request do
       parsed_body = JSON.parse(response.body)
       expect(parsed_body.length).to eq(1)
       expect(parsed_body[0]["name"]).to eq(item.name)
-      expect(parsed_body[0]["price"].to_d).to eq(item.price)
     end
   end
 
@@ -21,7 +20,6 @@ RSpec.describe "MenuItems", type: :request do
         expect(response).to have_http_status(:ok)
         parsed_body = JSON.parse(response.body)
         expect(parsed_body["name"]).to eq(item.name)
-        expect(parsed_body["price"].to_d).to eq(item.price)
       end
     end
     context "menu item with given id exists" do
