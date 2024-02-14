@@ -13,8 +13,8 @@ RSpec.describe "MenuItems", type: :request do
   end
 
   describe "GET /menu_items/:id" do
-    context "menu with given id exists" do
-      it "returns menu" do
+    context "menu item with given id exists" do
+      it "returns menu item" do
         item = create(:menu_item)
         get menu_item_path(item.id)
         expect(response).to have_http_status(:ok)
@@ -22,7 +22,7 @@ RSpec.describe "MenuItems", type: :request do
         expect(parsed_body["name"]).to eq(item.name)
       end
     end
-    context "menu item with given id exists" do
+    context "menu item with given id does not exist" do
       it "returns 404 not found" do
         get menu_path(-1)
         expect(response).to have_http_status(:not_found)

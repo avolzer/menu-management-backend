@@ -1,7 +1,7 @@
 class MenusController < ApplicationController
   def index
-    @menus = Menu.all
-    render json: @menus, status: :ok
+    menus = Menu.all
+    render json: menus, status: :ok
   end
 
   def show

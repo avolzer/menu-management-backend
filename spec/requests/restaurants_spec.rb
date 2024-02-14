@@ -22,9 +22,9 @@ RSpec.describe "Restaurants", type: :request do
         expect(parsed_body["name"]).to eq(restaurant.name)
       end
     end
-    context "menu with given id exists" do
+    context "restaurant with given id does not exist" do
       it "returns 404 not found" do
-        get menu_path(-1)
+        get restaurant_path(-1)
         expect(response).to have_http_status(:not_found)
       end
     end
