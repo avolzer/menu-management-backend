@@ -1,6 +1,6 @@
 class MenusController < ApplicationController
   def index
-    menus = Menu.all
+    menus = params[:restaurantId] ? Menu.where(restaurant_id: params[:restaurantId]) : Menu.all
     render json: menus, status: :ok
   end
 
