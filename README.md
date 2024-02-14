@@ -22,4 +22,6 @@ rspec spec
 ```
 curl --form "file=@filename.json" http://localhost:3000/imports
 ```
-The result can be inspected via the rails console
+An example restaurant_data.json file is found in spec/fixtures/files 
+
+The resulting Restaurant, Menu, MenuItem, and Price objects can be inspected via the rails console. 
